@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <title>
+        REBT of Stuttering Self-Help Form
+    </title>
+
+    <style>
+        h1 {
+            width: auto;
+            text-align: center;
+            margin: 0px 0px 1em 0px;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            text-align: left;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        table {
+            table-layout: auto;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+            table td {
+                border: 1px solid #ccc;
+            }
+
+        .step-section {
+            margin-left: 2em;
+            margin-bottom:.5em;
+        }
+        .fit-content {
+            width: fit-content;
+        }
+
+        .fill-width {
+            width: 99%;
+            max-width: 900px;
+        }
+
+        .label {
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        textarea {
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+        }
+
+        .textarea1 {
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+        }
+
+        .textarea2 {
+            width: 370px;
+            height: 100%;
+            max-width: 600px;
+        }
+
+        .Step3-Question {
+            text-align: center;
+            margin-top: 1em;
+        }
+        .auto-style1 {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width:1200px;">
+        <h1>REBT Self-Help Form for People who Stutter</h1>
+
+        <h2 style="margin-left:2em;">
+            <span class="auto-style1">(A) </span>a stressful situation triggers <span class="auto-style1">(Bu) </span>unhelpful beliefs <em>that evoke</em> <span class="auto-style1">(CEu) </span> consequent unhealthy emotion of anxiety <em>resulting</em> in <span class="auto-style1">(CB) </span>consequent self-defeating behaviors of struggled, forced, blocked speech/stuttering
+
+        </h2>
+        <div ng-show="!displayingResults" style="margin-left:4em;margin-bottom:10em;">
+
+            <h2>
+                Step 1: Describe the Activating Event
+            <span class="auto-style1">(A)</span></h2>
+            <div class="step-section">
+                <div class="label"> What is the situation that you are anxious about? </div>
+                Summarize the events that you are anxious about <br />
+                <div style="margin-left:1em;">
+                    <em> For example: <span class="auto-style1">"</span><span style="font-style:italic" class="auto-style1">I need to present my coding status in front of my boss and co-workers.</span><span class="auto-style1">&quot; </span> </em>
+                </div>
+                <textarea ng-model="Step1_1" rows="5" class="textarea1"></textarea>
+            </div>
+
+
+            <h2>
+                Step 2: Identify Your Unhealthy Negative Emotions <span class="auto-style1">(CEu) </span> & Your Self-defeating Behavior <span class="auto-style1">(CB)</span></h2>
+            <div class="step-section">
+                <div class="label"> What are the unhealthy negative emotions<span class="auto-style1"> (CEu)</span> that you are experiencing? </div>
+                Describe how you feel (or felt) about the situation. <br />
+                <div style="margin-left:1em;">
+                    <i> Unhealthy negative emotions include the following: Depression, Rage, Anxiety, Shame, Embarrassment, Hurt, Guilt, Jealousy" </i>
+                </div>
+                <textarea ng-model="Step2_1" rows="5" class="textarea1"></textarea>
+            </div>
+            <div class="step-section">
+                <div class="label"> What self-defeating behaviors <span class="auto-style1">(CB)</span> would you like to change? </div>
+                Describe your self-defeating behavior. <br />
+                <div style="margin-left:1em;">
+                    <i> Self-defeating behavior includes the following: Withdrawal or avoiding social contact, Procrastination, Violence, Drug and/or alcohol abuse, Unassertiveness, Exercise or work avoidance, Overeating"</i>
+                </div>
+                <textarea ng-model="Step2_2" rows="5" class="textarea1"></textarea>
+            </div>
+
+
+            <h2>
+                Step 3: Identify and Dispute your Beliefs
+            </h2>
+            <div class="step-section">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="label">Identify Your Irrational Beliefs</div>
+                            What are your irrational beliefs about the situation?
+                        </td>
+                        <td>
+                            <div class="label">Dispute Your Irrational Beliefs</div>
+                            What are your disputing questions?
+                        </td>
+                        <td>
+                            <div class="label">Identify Your Rational Beliefs</div>
+                            What are your rational beliefs about the situation?
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                            What demand are you making about the situation, yourself, and others?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_1_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_1_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_1_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                            In what way are you awfulizing about the situation?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_2_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_2_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_2_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                            What are you saying to yourself about the situation that indicates low frustration tolerance or discomfort?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_3_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_3_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_3_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                           What are you saying to yourself that you are down on yourself, that you are worthless?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_5_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_5_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_5_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                            What beliefs show that you are condemning your damning yourself and others?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_4_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_4_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_4_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                           In what way are you placing time pressure on your speech?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_6_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_6_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_6_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                           What are you saying to yourself to care too much about what other people think of you?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_7_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_7_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_7_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                           What are you saying to yourself that you think in "always, never, completely, or not at all" terms?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_8_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_8_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_8_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="Step3-Question" colspan="2">
+                           What other irrational beliefs do you have?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_9_1" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_9_2" rows="5" class="textarea2"></textarea>
+                        </td>
+                        <td class="fill-width">
+                            <textarea ng-model="Step3_9_3" rows="5" class="textarea2"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <h2>
+                Step 4: Identify Your Healthy Negative Emotions & Your Self-helping Behavior
+            </h2>
+            <div class="step-section">
+                <div class="label">
+                    What are your new healthy negative emotions?
+                </div>
+                <textarea ng-model="Step4_1" rows="5" class="textarea1"></textarea>
+            </div>
+            <div class="step-section">
+                <div class="label">
+                    What are your new self-helping behaviors?
+                </div>
+                <textarea ng-model="Step4_2" rows="5" class="textarea1"></textarea>
+            </div>
+            <div class="step-section">
+                <div class="label">
+                    What actions, self-help, or homework can you assign yourself?
+                </div>
+                <textarea ng-model="Step4_3" rows="5" class="textarea1"></textarea>
+            </div>
+
+
+            <button style="margin-top:1em; margin-left:5em;" ng-click="displayingResults = !displayingResults">
+                Process Your REBT Self-Help Form
+            </button>
+        </div>
+
+        <div style="max-width:1200px;" ng-show="displayingResults">
+
+            <div class="label"> What is the situation that you are upset about? </div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <strong>Answer: </strong>{{Step1_1}}
+            </div>
+
+            <div class="label">  What are the unhealthy negative emotions that you are experiencing? </div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <strong>Answer: </strong>{{Step2_1}}
+            </div>
+
+            <div class="label"> What self-defeating behaviors would you like to change?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <strong>Answer: </strong>{{Step2_2}}
+            </div>
+
+            <div class="label">What demand are you making about the situation, yourself, and others?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_1_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_1_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_1_3}}</div>
+            </div>
+
+            <div class="label">In what way are you awfulizing about the situation?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_2_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_2_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_2_3}}</div>
+            </div>
+
+            <div class="label">What are you saying to yourself about the situation that indicates low frustration tolerance or discomfort?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_3_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_3_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_3_3}}</div>
+            </div>
+
+
+            <div class="label">What are you saying to yourself that you are down on yourself, that you are worthless?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_5_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_5_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_5_3}}</div>
+            </div>
+
+
+            <div class="label">What beliefs show that you are condemning your damning yourself and others?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_4_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_4_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_4_3}}</div>
+            </div>
+
+
+            <div class="label">In what way are you placing time pressure on your speech?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_6_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_6_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_6_3}}</div>
+            </div>
+
+
+            <div class="label">What are you saying to yourself to care too much about what other people think of you?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_7_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_7_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_7_3}}</div>
+            </div>
+
+
+            <div class="label">What are you saying to yourself that you think in "always, never, completely, or not at all" terms?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_8_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_8_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_8_3}}</div>
+            </div>
+
+
+            <div class="label">What other irrational beliefs do you have?</div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <div><strong>Answer: </strong>{{Step3_9_1}}</div>
+                <div><strong>Dispute: </strong>{{Step3_9_2}}</div>
+                <div><strong>Rational Belief: </strong>{{Step3_9_3}}</div>
+            </div>
+
+            <div class="label">
+                What are your new healthy negative emotions?
+            </div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <strong>Answer: </strong>{{Step4_1}}
+            </div>
+
+            <div class="label">
+                What are your new self-helping behaviors?
+            </div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <strong>Answer: </strong>{{Step4_2}}
+            </div>
+
+            <div class="label">
+                What actions, self-help, or homework can you assign yourself?
+            </div>
+            <div style="margin-left:3em; margin-bottom:3em;">
+                <strong>Answer: </strong>{{Step4_3}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
